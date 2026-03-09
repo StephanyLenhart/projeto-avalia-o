@@ -161,22 +161,16 @@
         .model-card {
             flex: 1 1 280px;
             max-width: 350px;
-            background: white;
-            border-radius: 32px 32px 24px 24px;
-            box-shadow: 0 15px 30px -12px rgba(63, 90, 60, 0.2);
-            transition: all 0.25s;
+            display: flex;
+            flex-direction: column;
         }
 
-        .model-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 25px 35px -12px #3f5a3c6b;
-        }
-
+        /* imagem flutuante - separada da descrição */
         .card-img {
             width: 100%;
-            height: 320px;
-            background-color: #e1dbcf;  /* tom neutro para simular imagem */
-            border-radius: 32px 32px 0 0;
+            height: 340px;
+            background-color: #e1dbcf;
+            border-radius: 40px 40px 40px 40px;
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -186,51 +180,112 @@
             background-position: center 20%;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 20px 25px -12px rgba(63, 90, 60, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 25px; /* espaço entre imagem e descrição */
         }
 
-        /* imagens simuladas (descrição visual criativa) */
-        .card-img::after {
-            content: "👰🏼‍♀️";
-            font-size: 70px;
-            opacity: 0.5;
+        .card-img:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 30px -12px #3f5a3c;
+        }
+
+        /* imagens simuladas com padrões abstratos e ícones */
+        .img1 { 
+            background-image: linear-gradient(145deg, #dacfc1, #efe6d8), repeating-linear-gradient(45deg, rgba(95,115,92,0.1) 0px, rgba(95,115,92,0.1) 15px, transparent 15px, transparent 30px); 
+            background-blend-mode: overlay;
+            position: relative;
+        }
+        .img1::after {
+            content: "✨";
+            font-size: 90px;
             position: absolute;
-            bottom: 10px;
-            right: 15px;
-            transform: rotate(-5deg);
+            bottom: 20px;
+            right: 25px;
+            opacity: 0.7;
+            transform: rotate(5deg);
+            color: #5f735c;
+            text-shadow: 2px 2px 0 #faf7f2;
+        }
+        
+        .img2 { 
+            background-image: linear-gradient(125deg, #d6ccbd, #f2e9dd), radial-gradient(circle at 30% 40%, rgba(95,115,92,0.15) 0%, transparent 30%);
+            background-blend-mode: overlay;
+            position: relative;
+        }
+        .img2::after {
+            content: "👑";
+            font-size: 80px;
+            position: absolute;
+            bottom: 25px;
+            left: 25px;
+            opacity: 0.7;
+            transform: rotate(-8deg);
+            color: #5f735c;
+        }
+        
+        .img3 { 
+            background-image: linear-gradient(115deg, #cfc4b2, #eae0d3), repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(63,90,60,0.1) 20px, rgba(63,90,60,0.1) 40px);
+            background-blend-mode: overlay;
+            position: relative;
+        }
+        .img3::after {
+            content: "🕊️";
+            font-size: 80px;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            opacity: 0.6;
+            transform: rotate(5deg);
+            color: #3f5a3c;
         }
 
-        .img1 { background-image: linear-gradient(145deg, #c7bcac, #e8dfd1), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZjczNWMiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNiA5bDMgM2w1LTVNMTIgMjJjLTMuMzE0IDAtNi0yLjY4Ni02LTZ2LTRhNiA2IDAgMSAxIDEyIDB2NGMwIDMuMzE0LTIuNjg2IDYtNiA2eiIvPjwvc3ZnPg=='); background-blend-mode: overlay; }
-        .img2 { background-image: linear-gradient(145deg, #dad1c2, #f0e8dd), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZjczNWMiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNMTIgMjJjLTMuMzE0IDAtNi0yLjY4Ni02LTZ2LTRhNiA2IDAgMSAxIDEyIDB2NGMwIDMuMzE0LTIuNjg2IDYtNiA2eiIvPjwvc3ZnPg=='); background-blend-mode: soft-light; }
-        .img3 { background-image: linear-gradient(145deg, #d3caba, #ece3d7), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZjczNWMiIHN0cm9rZS13aWR0aD0iMSI+PHBvbHlsaW5lIHBvaW50cz0iNCA4IDggMTIgMTYgNCIvPjwvc3ZnPg=='); background-blend-mode: multiply; }
-
-        .card-content {
+        /* descrição separada da imagem - com estilo flutuante */
+        .card-description {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(6px);
             padding: 22px 18px 25px;
-            background-color: #ffffffda;
-            backdrop-filter: blur(2px);
-            border-radius: 0 0 24px 24px;
-            border-top: 2px solid #ebe1d2;
+            border-radius: 40px 40px 40px 40px;
+            border: 1px solid rgba(95, 115, 92, 0.2);
+            box-shadow: 0 15px 25px -18px #2e422b, 0 0 0 1px #faf7f2 inset;
+            transition: all 0.3s ease;
+            width: 95%;
+            margin: -15px auto 0 auto;  /* efeito flutuante: sobrepõe levemente a imagem */
+            position: relative;
+            z-index: 5;
         }
 
-        .card-content h3 {
-            font-size: 1.7rem;
+        .card-description:hover {
+            transform: scale(1.02);
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #8fa386;
+        }
+
+        .card-description h3 {
+            font-size: 1.8rem;
             font-weight: 400;
             font-family: 'Georgia', serif;
             color: #3f5a3c;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            border-left: 5px solid #8fa386;
+            padding-left: 15px;
         }
 
-        .card-content p {
+        .card-description p {
             color: #4d604a;
-            font-style: italic;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.6;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            margin-top: 8px;
+            font-style: normal;
         }
-        .card-content p::before {
+        .card-description p::before {
             content: "✦";
             color: #8fa386;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            margin-right: 5px;
         }
 
         /* ===== BANNER IMAGEM CASAMENTO ===== */
@@ -364,6 +419,7 @@
             .hero-slogan { font-size: 1.5rem; }
             .banner-content { justify-content: center; padding: 40px 20px; }
             .footer-grid { flex-direction: column; gap: 30px; }
+            .card-description { margin-top: -5px; width: 100%; }
         }
     </style>
 </head>
@@ -397,12 +453,12 @@
             <div class="hero-slogan">o reflexo da sua melhor versão</div>
         </div>
 
-        <!-- TRÊS IMAGENS DE MODELOS (cards) -->
+        <!-- TRÊS IMAGENS DE MODELOS com descrições flutuantes separadas -->
         <div class="model-gallery">
             <!-- card 1: modelo sereia -->
             <div class="model-card">
                 <div class="card-img img1"></div>
-                <div class="card-content">
+                <div class="card-description">
                     <h3>Sereia</h3>
                     <p>Renda francesa e微 brilho · caimento escultural que valoriza a silhueta.</p>
                 </div>
@@ -410,7 +466,7 @@
             <!-- card 2: modelo princesa -->
             <div class="model-card">
                 <div class="card-img img2"></div>
-                <div class="card-content">
+                <div class="card-description">
                     <h3>Princesa</h3>
                     <p>Saia volumosa em tule over mesh · corpete acetinado com bordados à mão.</p>
                 </div>
@@ -418,7 +474,7 @@
             <!-- card 3: modelo evase / a linha -->
             <div class="model-card">
                 <div class="card-img img3"></div>
-                <div class="card-content">
+                <div class="card-description">
                     <h3>A-line</h3>
                     <p>Crepe alfaiataria com forro de seda · movimento suave e elegante.</p>
                 </div>
@@ -434,10 +490,6 @@
                 <p>nos melhores momentos da sua vida. ✨</p>
             </div>
         </div>
-    </div>
-
-    <div class="container">
-        <!-- espaço extra depois do banner (já incluso no footer) -->
     </div>
 
     <!-- RODAPÉ com contato, endereço, redes sociais -->
