@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Dress Co. · Vestidos de noiva</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #faf7f2;  /* off white base */
+            color: #2c3e2b;               /* verde oliva escuro para texto */
+            line-height: 1.5;
+        }
+
+        /* cores utilitárias */
+        .off-white-bg { background-color: #faf7f2; }
+        .olive-bg { background-color: #5f735c; }
+        .olive-text { color: #3f5a3c; }
+        .light-olive { color: #7d8f7a; }
+
+        /* container centralizado com padding lateral */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== MENU / HEADER ===== */
+        header {
+            padding: 20px 0 10px 0;
+            border-bottom: 1px solid #d9d0c0;  /* tom areia suave */
+        }
+
+        .header-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* logo criativa - combinação de símbolo + texto */
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #5f735c;               /* verde oliva principal */
+            width: 48px;
+            height: 48px;
+            border-radius: 50% 20% 50% 20%;    /* forma orgânica, lembra um vestido/laço */
+            color: #faf7f2;
+            font-size: 28px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+
+        .logo-mark span {
+            transform: rotate(-5deg);
+            display: inline-block;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #3f5a3c;
+            border-left: 2px solid #beb6a4;
+            padding-left: 15px;
+        }
+        .logo-text strong {
+            font-weight: 500;
+            font-style: italic;
+        }
+
+        /* menu modelo (select) */
+        .model-selector {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ece6db;
+            padding: 8px 18px;
+            border-radius: 40px;
+        }
+
+        .model-selector label {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #4a6047;
+            font-weight: 400;
+        }
+
+        select {
+            background: #faf7f2;
+            border: 1px solid #b9af9a;
+            border-radius: 30px;
+            padding: 8px 24px 8px 16px;
+            font-size: 1rem;
+            color: #2c3e2b;
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235f735c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 14px;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #5f735c;
+        }
+
+        /* ===== TÍTULO PRINCIPAL E SLOGAN ===== */
+        .hero-title {
+            margin: 70px 0 25px 0;
+            text-align: left;
+        }
+
+        .hero-title h1 {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: 5rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            color: #3f5a3c;
+            line-height: 1;
+            text-shadow: 2px 2px 0 rgba(191, 178, 158, 0.2);
+            font-style: normal;
+        }
+
+        .hero-slogan {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 2rem;
+            font-style: italic;
+            color: #7d8f7a;
+            margin-top: 5px;
+            border-bottom: 1px dashed #cfc6b6;
+            padding-bottom: 20px;
+        }
+
+        /* ===== GALERIA 3 MODELOS ===== */
+        .model-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 60px 0 50px;
+            justify-content: center;
+        }
+
+        .model-card {
+            flex: 1 1 280px;
+            max-width: 350px;
+            background: white;
+            border-radius: 32px 32px 24px 24px;
+            box-shadow: 0 15px 30px -12px rgba(63, 90, 60, 0.2);
+            transition: all 0.25s;
+        }
+
+        .model-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -12px #3f5a3c6b;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 320px;
+            background-color: #e1dbcf;  /* tom neutro para simular imagem */
+            border-radius: 32px 32px 0 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #3f5a3c;
+            background-size: cover;
+            background-position: center 20%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* imagens simuladas (descrição visual criativa) */
+        .card-img::after {
+            content: "👰🏼‍♀️";
+            font-size: 70px;
+            opacity: 0.5;
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            transform: rotate(-5deg);
+        }
+
+        .img1 { background-image: linear-gradient(145deg, #c7bcac, #e8dfd1), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZjczNWMiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNNiA5bDMgM2w1LTVNMTIgMjJjLTMuMzE0IDAtNi0yLjY4Ni02LTZ2LTRhNiA2IDAgMSAxIDEyIDB2NGMwIDMuMzE0LTIuNjg2IDYtNiA2eiIvPjwvc3ZnPg=='); background-blend-mode: overlay; }
+        .img2 { background-image: linear-gradient(145deg, #dad1c2, #f0e8dd), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZjczNWMiIHN0cm9rZS13aWR0aD0iMS41Ij48cGF0aCBkPSJNMTIgMjJjLTMuMzE0IDAtNi0yLjY4Ni02LTZ2LTRhNiA2IDAgMSAxIDEyIDB2NGMwIDMuMzE0LTIuNjg2IDYtNiA2eiIvPjwvc3ZnPg=='); background-blend-mode: soft-light; }
+        .img3 { background-image: linear-gradient(145deg, #d3caba, #ece3d7), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZjczNWMiIHN0cm9rZS13aWR0aD0iMSI+PHBvbHlsaW5lIHBvaW50cz0iNCA4IDggMTIgMTYgNCIvPjwvc3ZnPg=='); background-blend-mode: multiply; }
+
+        .card-content {
+            padding: 22px 18px 25px;
+            background-color: #ffffffda;
+            backdrop-filter: blur(2px);
+            border-radius: 0 0 24px 24px;
+            border-top: 2px solid #ebe1d2;
+        }
+
+        .card-content h3 {
+            font-size: 1.7rem;
+            font-weight: 400;
+            font-family: 'Georgia', serif;
+            color: #3f5a3c;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #4d604a;
+            font-style: italic;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-content p::before {
+            content: "✦";
+            color: #8fa386;
+            font-size: 1.3rem;
+        }
+
+        /* ===== BANNER IMAGEM CASAMENTO ===== */
+        .banner-wedding {
+            margin: 80px 0 60px;
+            border-radius: 60px 20px 60px 20px;
+            overflow: hidden;
+            background-color: #c7bcac;  /* fallback */
+            background-image: linear-gradient(97deg, rgba(250,247,242,0.75) 20%, rgba(95,115,92,0.5) 90%), url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgyMCkiPjxjaXJjbGUgY3g9IjEwIiBjeT0iMTAiIHI9IjgiIGZpbGw9IiNmZmZmZmMwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48cG9seWdvbiBwb2ludHM9IjUwLDE1IDYwLDM1IDQwLDM1IiBmaWxsPSIjZmZmZmUwIiBmaWxsLW9wYWNpdHk9IjAuMTUiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcCkiLz48L3N2Zz4='); /* padrão suave de flores */
+            background-blend-mode: overlay;
+            background-size: cover, auto;
+            box-shadow: 0 25px 30px -20px #2e422b;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 70px 50px;
+            backdrop-filter: brightness(1.02);
+        }
+
+        .banner-textbox {
+            max-width: 450px;
+            background: rgba(250, 247, 242, 0.7);
+            backdrop-filter: blur(4px);
+            padding: 40px 40px;
+            border-radius: 70px 20px 70px 20px;
+            border: 2px solid #faf7f2;
+            box-shadow: 0 10px 30px rgba(63, 90, 60, 0.15);
+        }
+
+        .banner-textbox h2 {
+            font-size: 2.6rem;
+            font-family: 'Times New Roman', serif;
+            font-weight: 400;
+            color: #2b4127;
+            line-height: 1.2;
+        }
+
+        .banner-textbox p {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: #3f5a3c;
+            margin: 15px 0 0;
+            border-left: 4px solid #8fa386;
+            padding-left: 20px;
+        }
+
+        /* ===== RODAPÉ ===== */
+        footer {
+            background-color: #5a6e57;  /* verde oliva médio */
+            color: #f3efe8;
+            padding: 48px 0 30px;
+            margin-top: 80px;
+            border-radius: 60px 60px 0 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .footer-col {
+            flex: 1 1 220px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #beb6a4;
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+            color: #f3efe8;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #e2dbcf;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #faf7f2;
+            transform: translateX(4px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        .social-icons span {
+            font-size: 2rem;
+            background: #faf7f2;
+            color: #5f735c;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 0 #3b4f38;
+            transition: 0.15s;
+            cursor: default;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.95rem;
+            color: #cfdbc9;
+            border-top: 1px solid #7d8f7a;
+            padding-top: 20px;
+        }
+
+        /* responsividade simples */
+        @media (max-width: 750px) {
+            .header-row { flex-direction: column; align-items: start; gap: 15px; }
+            .hero-title h1 { font-size: 3.8rem; }
+            .hero-slogan { font-size: 1.5rem; }
+            .banner-content { justify-content: center; padding: 40px 20px; }
+            .footer-grid { flex-direction: column; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- MENU superior com logo + seletor -->
+        <header>
+            <div class="header-row">
+                <div class="logo-area">
+                    <div class="logo-mark"><span>✧</span></div>
+                    <div class="logo-text"><strong>Dream</strong> Dress Co.</div>
+                </div>
+                <div class="model-selector">
+                    <label for="modelos">Modelos</label>
+                    <select name="modelos" id="modelos">
+                        <option value="sereia">Sereia</option>
+                        <option value="princesa" selected>Princesa</option>
+                        <option value="arial">A linha</option>
+                        <option value="imperio">Império</option>
+                        <option value="evase">Evase</option>
+                        <option value="sereia">Sereia</option>
+                        <option value="boho">Boho</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- TÍTULO DIFERENTÃO + SLOGAN itálico -->
+        <div class="hero-title">
+            <h1>Dream Dress Co.</h1>
+            <div class="hero-slogan">o reflexo da sua melhor versão</div>
+        </div>
+
+        <!-- TRÊS IMAGENS DE MODELOS (cards) -->
+        <div class="model-gallery">
+            <!-- card 1: modelo sereia -->
+            <div class="model-card">
+                <div class="card-img img1"></div>
+                <div class="card-content">
+                    <h3>Sereia</h3>
+                    <p>Renda francesa e微 brilho · caimento escultural que valoriza a silhueta.</p>
+                </div>
+            </div>
+            <!-- card 2: modelo princesa -->
+            <div class="model-card">
+                <div class="card-img img2"></div>
+                <div class="card-content">
+                    <h3>Princesa</h3>
+                    <p>Saia volumosa em tule over mesh · corpete acetinado com bordados à mão.</p>
+                </div>
+            </div>
+            <!-- card 3: modelo evase / a linha -->
+            <div class="model-card">
+                <div class="card-img img3"></div>
+                <div class="card-content">
+                    <h3>A-line</h3>
+                    <p>Crepe alfaiataria com forro de seda · movimento suave e elegante.</p>
+                </div>
+            </div>
+        </div>
+    </div> <!-- fim container -->
+
+    <!-- BANNER LARGO com imagem de fundo casamento -->
+    <div class="banner-wedding">
+        <div class="container banner-content">
+            <div class="banner-textbox">
+                <h2>Junto com você</h2>
+                <p>nos melhores momentos da sua vida. ✨</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- espaço extra depois do banner (já incluso no footer) -->
+    </div>
+
+    <!-- RODAPÉ com contato, endereço, redes sociais -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>contato</h4>
+                <p>📞 (11) 99999-9999</p>
+                <p>✉️ contato@dreamdress.co</p>
+                <p>📱 atendimento via WhatsApp</p>
+            </div>
+            <div class="footer-col">
+                <h4>onde nos encontrar</h4>
+                <p>📍 Rua das Noivas, 166<br>Jardim Oliva · São Paulo/SP</p>
+                <p>⏰ ter–sáb 10h–19h</p>
+            </div>
+            <div class="footer-col">
+                <h4>redes sociais</h4>
+                <div class="social-icons">
+                    <span>📘</span>
+                    <span>📷</span>
+                    <span>🎵</span>
+                    <span>🕊️</span>
+                </div>
+                <p style="margin-top: 20px;">@dreamdress.co</p>
+            </div>
+        </div>
+        <div class="container copyright">
+            © 2025 Dream Dress Co. — o reflexo da sua melhor versão. Todos os direitos reservados.
+        </div>
+    </footer>
+</body>
+</html>
