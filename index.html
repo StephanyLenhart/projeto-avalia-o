@@ -172,17 +172,13 @@
             background-color: #e1dbcf;
             border-radius: 40px 40px 40px 40px;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            color: #3f5a3c;
-            background-size: cover;
-            background-position: center 20%;
             position: relative;
             overflow: hidden;
             box-shadow: 0 20px 25px -12px rgba(63, 90, 60, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 25px; /* espaço entre imagem e descrição */
+            margin-bottom: 25px;
         }
 
         .card-img:hover {
@@ -190,10 +186,17 @@
             box-shadow: 0 28px 30px -12px #3f5a3c;
         }
 
-        /* imagens simuladas com padrões abstratos e ícones */
+        /* CORREÇÃO: imagem dentro da box fica inteira e ajustada sem cortes */
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;  /* imagem inteira, sem cortes */
+            display: block;
+            border-radius: 40px;
+        }
+
+        /* imagens com padrões abstratos e ícones de fundo (mantido para compatibilidade) */
         .img1 { 
-            background-image: linear-gradient(145deg, #dacfc1, #efe6d8), repeating-linear-gradient(45deg, rgba(95,115,92,0.1) 0px, rgba(95,115,92,0.1) 15px, transparent 15px, transparent 30px); 
-            background-blend-mode: overlay;
             position: relative;
         }
         .img1::after {
@@ -202,30 +205,31 @@
             position: absolute;
             bottom: 20px;
             right: 25px;
-            opacity: 0.7;
+            opacity: 0.5;
             transform: rotate(5deg);
             color: #5f735c;
             text-shadow: 2px 2px 0 #faf7f2;
+            pointer-events: none;
+            z-index: 2;
         }
         
         .img2 { 
-            background-image: linear-gradient(125deg, #d6ccbd, #f2e9dd), radial-gradient(circle at 30% 40%, rgba(95,115,92,0.15) 0%, transparent 30%);
-            background-blend-mode: overlay;
             position: relative;
         }
         .img2::after {
+            content: "👑";
             font-size: 80px;
             position: absolute;
             bottom: 25px;
             left: 25px;
-            opacity: 0.7;
+            opacity: 0.5;
             transform: rotate(-8deg);
             color: #5f735c;
+            pointer-events: none;
+            z-index: 2;
         }
         
         .img3 { 
-            background-image: linear-gradient(115deg, #cfc4b2, #eae0d3), repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(63,90,60,0.1) 20px, rgba(63,90,60,0.1) 40px);
-            background-blend-mode: overlay;
             position: relative;
         }
         .img3::after {
@@ -234,9 +238,11 @@
             position: absolute;
             top: 30px;
             right: 30px;
-            opacity: 0.6;
+            opacity: 0.5;
             transform: rotate(5deg);
             color: #3f5a3c;
+            pointer-events: none;
+            z-index: 2;
         }
 
         /* descrição separada da imagem - com estilo flutuante */
@@ -457,9 +463,8 @@
             <!-- card 1: modelo sereia -->
             <div class="model-card">
                 <div class="card-img img1">
-                <img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/29401281_1730176583687102_287381029189058560_n.jpg?quality=70&strip=info&w=720&crop=1">
+                    <img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/29401281_1730176583687102_287381029189058560_n.jpg?quality=70&strip=info&w=720&crop=1" alt="Vestido de noiva modelo Sereia">
                 </div>
-
                 <div class="card-description">
                     <h3>Sereia</h3>
                     <p>Renda francesa e brilho · caimento escultural que valoriza a silhueta.</p>
@@ -468,8 +473,7 @@
             <!-- card 2: modelo princesa -->
             <div class="model-card">
                 <div class="card-img img2">
-                     <img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/29401281_1730176583687102_287381029189058560_n.jpg?quality=70&strip=info&w=720&crop=1">
-               
+                    <img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/29401281_1730176583687102_287381029189058560_n.jpg?quality=70&strip=info&w=720&crop=1" alt="Vestido de noiva modelo Princesa">
                 </div>
                 <div class="card-description">
                     <h3>Princesa</h3>
@@ -479,8 +483,7 @@
             <!-- card 3: modelo evase / a linha -->
             <div class="model-card">
                 <div class="card-img img3">
-                     <img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/29401281_1730176583687102_287381029189058560_n.jpg?quality=70&strip=info&w=720&crop=1">
-               
+                    <img src="https://claudia.abril.com.br/wp-content/uploads/2020/01/29401281_1730176583687102_287381029189058560_n.jpg?quality=70&strip=info&w=720&crop=1" alt="Vestido de noiva modelo A-line">
                 </div>
                 <div class="card-description">
                     <h3>A-line</h3>
